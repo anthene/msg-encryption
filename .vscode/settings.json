@@ -3,7 +3,7 @@
         ".vscode": true,
         ".gitignore": true,
         "node_modules": true,
-        "**/*.js.map": true,
-        "**/*.js": true
+        "app/**/*.js.map": true,
+        "app/**/*.js": true
     }
 }
