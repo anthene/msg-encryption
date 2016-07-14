@@ -1,0 +1,21 @@
+{
+  "name": "msg-encryption",
+  "version": "0.0.1",
+  "description": "Message encryption web resource",
+  "main": "index.js",
+  "scripts": {
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthene/msg-encryption.git"
+  },
+  "author": "anthene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthene/msg-encryption/issues"
+  },
+  "homepage": "https://github.com/anthene/msg-encryption#readme",
+  "dependencies": {
+  }
+}
