@@ -1,9 +1,11 @@
+import { Base64 } from "js-base64";
+
 function $<T extends HTMLElement>(id: string): T {
     return <T>document.getElementById(id);
 }
 
 function encrypt(msg: string, pswd: string): string {
-    return msg + ' ' + pswd;
+    return Base64.encode(msg + ' ' + pswd);
 }
 
 function updateCypher(e: Event) {

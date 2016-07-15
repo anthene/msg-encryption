@@ -17,5 +17,8 @@
   },
   "homepage": "https://github.com/anthene/msg-encryption#readme",
   "dependencies": {
+    "buffer": "^4.7.1",
+    "js-base64": "^2.1.9",
+    "systemjs": "^0.19.31"
   }
 }

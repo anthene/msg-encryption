@@ -9,6 +9,28 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script>
+        System.config({
+            map: {
+                "app": "app",
+                "js-base64": "node_modules/js-base64",
+                "buffer": "node_modules/buffer",
+                "base64-js": "node_modules/buffer/node_modules/base64-js",
+                "ieee754": "node_modules/buffer/node_modules/ieee754",
+                "isarray": "node_modules/buffer/node_modules/isarray"
+            },
+            packages: {
+                'app': { main: 'main.js', defaultExtension: 'js' },
+                'js-base64': { main: 'base64.js', defaultExtension: 'js' },
+                'buffer': { main: 'index.js', defaultExtension: 'js' },
+                'base64-js': { main: 'base64js.min.js', defaultExtension: 'js' },
+                'ieee754': { main: 'index.js', defaultExtension: 'js' },
+                'isarray': { main: 'index.js', defaultExtension: 'js' }
+            }
+        })
+        System.import('app').catch(function(err){ console.error(err); });
+    </script>
   </head>
   <body>
     <div class="container-fluid">
@@ -61,6 +83,5 @@
         </div>
     </div>
     </div>
-    <script src="app/main.js"></script>
   </body>
 </html>
