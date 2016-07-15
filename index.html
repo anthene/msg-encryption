@@ -18,7 +18,8 @@
                 "buffer": "node_modules/buffer",
                 "base64-js": "node_modules/buffer/node_modules/base64-js",
                 "ieee754": "node_modules/buffer/node_modules/ieee754",
-                "isarray": "node_modules/buffer/node_modules/isarray"
+                "isarray": "node_modules/buffer/node_modules/isarray",
+                "aes-js": "node_modules/aes-js"
             },
             packages: {
                 'app': { main: 'main.js', defaultExtension: 'js' },
@@ -26,7 +27,8 @@
                 'buffer': { main: 'index.js', defaultExtension: 'js' },
                 'base64-js': { main: 'base64js.min.js', defaultExtension: 'js' },
                 'ieee754': { main: 'index.js', defaultExtension: 'js' },
-                'isarray': { main: 'index.js', defaultExtension: 'js' }
+                'isarray': { main: 'index.js', defaultExtension: 'js' },
+                'aes-js': { main: 'index.js', defaultExtension: 'js' }
             }
         })
         System.import('app').catch(function(err){ console.error(err); });
