@@ -14,6 +14,7 @@
      plugins: [
          new CleanWebpackPlugin([output]),
          new CopyWebpackPlugin([
+             { from: 'encryption.appcache' },
              { from: 'index.prod.html', to: "index.html" },
             { from: "js/**/*.js" },
             { from: "css/**/*.css" }
