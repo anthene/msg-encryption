@@ -1,7 +1,7 @@
 declare module 'aes-js' {
     export namespace util {
-        export function convertStringToBytes(text: string, encoding: string): number[];
-        export function convertBytesToString(bytes: number[], encoding: string): string;
+        export function convertStringToBytes(text: string, encoding?: string): number[];
+        export function convertBytesToString(bytes: number[], encoding?: string): string;
         export function decode(input: string): string;
     }
 
