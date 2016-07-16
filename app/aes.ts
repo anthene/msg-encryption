@@ -8,8 +8,8 @@ export function encrypt(msg: string, pswd: string): string {
     msg = toHex(msg);
     console.log(msg);
 
-    const msgBytes = util.convertStringToBytes(msg);
-    const pswdBytes = util.convertStringToBytes(toHex(addChars(pswd)));
+    const msgBytes = util.convertStringToBytes(msg, "hex");
+    const pswdBytes = util.convertStringToBytes(toHex(addChars(pswd)), "hex");
     let cyp = util.convertBytesToString(encryptBytes(msgBytes, pswdBytes), "hex");
     console.log(cyp);
 
@@ -38,10 +38,10 @@ export function decrypt(cyp: string, pswd: string): string {
     // console.log(cyp);
 
     const cypBytes = util.convertStringToBytes(cyp, "hex");
-    const pswdBytes = util.convertStringToBytes(toHex(addChars(pswd)));
+    const pswdBytes = util.convertStringToBytes(toHex(addChars(pswd)), "hex");
     const msgBytes = decryptBytes(cypBytes, pswdBytes);
 
-    let msg = util.convertBytesToString(msgBytes);
+    let msg = util.convertBytesToString(msgBytes, "hex");
     console.log(msg);
 
     msg = fromHex(msg);
@@ -62,8 +62,8 @@ function decryptBytes(cypBytes: number[], pswdBytes: number[]): number[] {
 }
 
 function addChars(str: string): string {
-    if (str.length < 8) {
-        const restCount = 8 - str.length;
+    if (str.length < 16) {
+        const restCount = 16 - str.length;
         for (let i = 0; i < restCount; i++) {
             str += "0";
         }
