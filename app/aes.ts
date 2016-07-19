@@ -1,5 +1,5 @@
-// import { Base64 } from "js-base64";
 import { util, Counter, ModeOfOperation } from "aes-js";
+import { toBase64, fromBase64 } from "./base64";
 
 export function encrypt(msg: string, pswd: string): string {
     console.log(msg);
@@ -10,11 +10,9 @@ export function encrypt(msg: string, pswd: string): string {
 
     const msgBytes = util.convertStringToBytes(msg, "hex");
     const pswdBytes = util.convertStringToBytes(toHex(addChars(pswd)), "hex");
-    let cyp = util.convertBytesToString(encryptBytes(msgBytes, pswdBytes), "hex");
-    console.log(cyp);
 
-    // cyp = Base64.encode(cyp);
-    // console.log(cyp);
+    let cyp = toBase64(encryptBytes(msgBytes, pswdBytes));
+    console.log(cyp);
     
     return cyp;
 }
@@ -34,10 +32,7 @@ export function decrypt(cyp: string, pswd: string): string {
     console.log(cyp);
     console.log(pswd);
 
-    // cyp = Base64.decode(cyp);
-    // console.log(cyp);
-
-    const cypBytes = util.convertStringToBytes(cyp, "hex");
+    const cypBytes = fromBase64(cyp);
     const pswdBytes = util.convertStringToBytes(toHex(addChars(pswd)), "hex");
     const msgBytes = decryptBytes(cypBytes, pswdBytes);
 
